@@ -4,13 +4,11 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "client": "webpack-dev-server --open --mode development",
-    "start": "webpack --mode production --progress",
+    "start": "webpack-dev-server --open --mode development",
     "dev": "webpack --mode development",
     "build": "webpack --mode production --progress",
     "predeploy": "npm run dev",
-    "test": "jest",
-    "heroku-postbuild": "webpack -p"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,7 +21,7 @@
     "url": "https://github.com/annaboyatyuk/notesfrontend/issues"
   },
   "homepage": "https://github.com/annaboyatyuk/notesfrontend#readme",
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
