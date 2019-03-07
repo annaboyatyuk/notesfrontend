@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { notesGetAll } from '../../store/notes.js';
 
 import NoteForm from './NoteForm.js';
+import '../../../style/note.scss';
 
 class NoteItem extends Component {
 
@@ -27,9 +28,9 @@ class NoteItem extends Component {
 
   render() {
     return (
-      <ul>
+      <ul className='note-item-container'>
         {this.props.note.map(noteItem => (
-          <li id={noteItem._id} key={noteItem._id}>
+          <li className='note-item' id={noteItem._id} key={noteItem._id}>
 
             <h2>{noteItem.title}</h2>
 
