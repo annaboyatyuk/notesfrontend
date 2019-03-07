@@ -10,7 +10,7 @@ export default class Header extends Component {
 
           <div className='green-box'></div>
           
-          <p>Anna Boyatyuk</p>
+          <p>Take Note</p>
 
         </div>
       </Fragment>
