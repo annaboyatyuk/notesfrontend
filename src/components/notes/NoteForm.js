@@ -32,13 +32,13 @@ export default class NoteForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className='note-form' onSubmit={this.handleSubmit}>
 
         <label>TITLE</label>
         <input required type='text' name='title' onChange={this.handleChange} value={this.state.title}/>
 
         <label>NOTE</label>
-        <input required type='text' name='note' onChange={this.handleChange} value={this.state.note}/>
+        <textarea required type='text' name='note' onChange={this.handleChange} value={this.state.note}/>
 
         <input className='submitButton' type='submit' value={this.props.buttonText}/>
 

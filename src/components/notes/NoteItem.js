@@ -31,15 +31,17 @@ class NoteItem extends Component {
       <ul className='note-item-container'>
         {this.props.note.map(noteItem => (
           <li className='note-item' id={noteItem._id} key={noteItem._id}>
-
-            <h2>{noteItem.title}</h2>
-
-            <p onDoubleClick={() => this.handleDouble(noteItem._id)}>{noteItem.note} <span>(double click to edit)</span></p>
+            
+            <div className='note-header'>
+              <h3>{noteItem.title}</h3>
+            </div>
+            
+            <p className='note-text' onDoubleClick={() => this.handleDouble(noteItem._id)}>{noteItem.note} <span>(double click to edit)</span></p>
 
             <button onClick={() => this.props.deleteNote(noteItem)}>X</button>
 
             {this.state.id === noteItem._id ? <NoteForm buttonText='UPDATE' onComplete={this.updateNote} noteItem={noteItem}/> : null}
-
+            
           </li>
         ))}
       </ul>
