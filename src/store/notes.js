@@ -10,7 +10,7 @@ const GETALL = 'NOTE_GETALL';
 let initialState = [];
 
 // Reducer
-export default function reducer(state = initialState, action) {
+export default (state = initialState, action) => {
 
   const {type, payload} = action;
 
@@ -21,7 +21,7 @@ export default function reducer(state = initialState, action) {
     case GETALL: return [...state, ...payload];
     default: return state;
   }
-}
+};
 
 // Action Creators
 
@@ -48,12 +48,11 @@ export const noteCreate = note => dispatch => {
 export const noteUpdate = note => dispatch => {
   let id = note.id;
   superagent.put(`${process.env.API_URL}/api/v1/notes/${id}`, note)
-    .then(res => {
+    .then(res =>
       dispatch({
         type: UPDATE,
         payload: res.body,
-      });
-    });
+      }));
 };
 
 export const noteDelete = note => dispatch => {
